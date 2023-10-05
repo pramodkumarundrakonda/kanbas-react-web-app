@@ -1,0 +1,16 @@
+.kanbas-body-text-picture {
+    padding: 5px;
+}
+
+.kanbas-body-text-edit-links-ref {
+    font-weight: bold;
+    text-align: center;
+}
+
+.kanbas-body-text-edit-links-delete {
+    color: var(--kanbas-red)
+}
+.profileHeader{
+    font-size: 1.5em;
+    font-weight: normal;
+}
