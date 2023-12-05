@@ -1,70 +1,119 @@
-import React from "react";
-import {
-  useParams,
-  Routes,
-  Route,
-  Navigate,
-  useLocation,
-} from "react-router-dom";
-import { AiOutlineMenu, AiOutlineRight } from "react-icons/ai";
-import db from "../Database";
+// import db from "../../Kanbas/Database";
+import { BrowserRouter, Link, Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation";
+import { FaBars, FaChevronDown, FaGlasses } from "react-icons/fa";
+import "../../Kanbas/index.css";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
-import "./index.css";
+import { FaXmark } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 function Courses() {
-  const { courseId } = useParams();
-  const { pathname } = useLocation();
-  const [empty, kanbas, _courses, id, screen] = pathname.split("/");
-  const API_BASE = process.env.REACT_APP_API_BASE;
-  const URL = `${API_BASE}/courses`;
-  const [course, setCourse] = useState({});
-  const findCourseById = async (courseId) => {
-    const response = await axios.get(
-      `${URL}/${courseId}`
+    let courseIdToUse;
+    // const URL = "http://localhost:4000/api/courses";
+    const API_BASE = process.env.REACT_APP_API_BASE;
+    const URL = `${API_BASE}/courses`;
+    const { courseId } = useParams();
+    const [course, setCourse] = useState({});
+    const findCourseById = async (courseId) => {
+        const response = await axios.get(
+            `${URL}/${courseId}`
+        );
+        setCourse(response.data);
+    };
+    useEffect(() => {
+        findCourseById(courseId);
+    }, [courseId]);
+    const {pathname} = useLocation();  
+    if (courseId){
+        courseIdToUse = courseId;
+    } 
+    else{
+        courseIdToUse = "RS101";
+    }
+    // const courseIdToUse = courseId || "RS101";
+    const startIndex = pathname.indexOf(courseIdToUse) + courseIdToUse.length;
+    const breadcrumbPath = pathname.slice(startIndex);
+    const breadcrumbItems = breadcrumbPath.split('/').filter(item => item !== '');  
+
+    const breadcrumbStyle = {
+        //'--bs-breadcrumb-divider': '/',
+        'paddingLeft': 30
+    };
+    return (
+        <div className="wd-flex-grow-1" style={{marginRight: 20}}>
+            <div className="navbar wd-kanbas-top-bar">
+                <div className="d-none d-md-block">
+                <div style={{display: "flex"}}>
+                    <FaBars className="fa-2x" style={{paddingLeft: 2}}/>
+                <nav style={breadcrumbStyle} aria-label="breadcrumb">
+                    <ol className="breadcrumb" style={{whiteSpace: "nowrap", margin: 0}}>
+                        { course === undefined ? (<></>) : 
+                        <li className="breadcrumb-item"><p className="breadcrumb-home-text">{course.number}.{course._id}</p></li>}
+                        {/* <li className="breadcrumb-item active" aria-current="page"><p className="breadcrumb-home-text" style={{color: "black"}}>Home</p></li> */}
+                        {breadcrumbItems.map((item, index) => (
+                            <li key={index} className="breadcrumb-item active me-2">
+                            {index === breadcrumbItems.length - 1 ? (
+                                item
+                            ) : (
+                                <p className="breadcrumb-home-text" style={{color: "black"}}>{item}</p>
+                                // <a href={`/Kanbas/Courses/${courseId}/${breadcrumbItems.slice(0, index + 1).join('/')}`}>
+                                // {item}
+                                // </a>
+                            )}
+                            </li>
+                        ))}
+                    </ol>
+                </nav>
+                </div>
+                </div>
+                <button className="btn btn-primary wd-btn-kanbas-primary d-none d-md-block">
+                    <FaGlasses className="fa-solid me-2"/>Student View</button>
+
+                
+            </div>
+
+            <div className="wd-bg-color-black d-flex d-md-none wd-color-white align-items-center p-2">
+                <Link to={`/Kanbas/KanbasMin/${courseId}`} style={{textDecoration: "none"}}>
+                    <FaBars className="wd-color-white m-3"/>
+                </Link>
+                <div className="wd-flex-grow-1 text-center">
+                { course === undefined ? (<></>) : 
+                    <div>{course.number}.{course._id}</div> }
+                    <div>{breadcrumbItems[0]}</div>
+                </div>
+                <div className="float-end">
+                    <FaGlasses className="mt-3 mb-3 ms-3 me-2"/>
+                    <Link to={`/Kanbas/CourseNavMin/${courseId}`} style={{textDecoration: "none"}}>
+                    <FaChevronDown className="wd-color-white mt-3 mb-3 me-3"/>
+                </Link>
+                </div>
+            </div>
+            
+            <hr className="d-none d-md-block" style={{marginLeft: 20}}/>
+            <div className="wd-flex-row-container wd-flex-grow-1">
+            <CourseNavigation />
+            <div className="wd-flex-grow-1">
+                <div>
+                    <Routes>
+                        <Route path="/" element={<Navigate to="Home" />} />
+                        <Route path="Home" element={<Home/>} />
+                        <Route path="Modules" element={<Modules/>} />
+                        <Route path="Assignments" element={<Assignments/>} />
+                        <Route
+                        path="Assignments/:assignmentId"
+                        element={<AssignmentEditor/>}
+                        />                       
+                        <Route path="Grades" element={<Grades/>} />
+                    </Routes>
+                </div>
+            </div>
+            </div>
+        </div>
     );
-    setCourse(response.data);
-  };
-
-  useEffect(() => {
-    findCourseById(courseId);
-  }, [courseId]);
-
-  return (
-    <div>
-      <div className="course-heading">
-        <div className="course-name">
-          <AiOutlineMenu />
-          <h6>{course._id}</h6>
-          <AiOutlineRight />
-          <h6 style={{ color: "black", fontWeight: 300 }}>{screen}</h6>
-        </div>
-      </div>
-      <hr />
-      <div className="d-flex">
-        <CourseNavigation />
-        <div style={{ flexGrow: 1 }}>
-          <Routes>
-            <Route path="/" element={<Navigate to="Home" />} />
-            <Route path="Home" element={<Home />} />
-            <Route path="Modules" element={<Modules />} />
-            <Route path="Assignments" element={<Assignments />} />
-            <Route
-              path="Assignments/:assignmentId"
-              element={<AssignmentEditor />}
-            />
-            <Route path="Grades" element={<Grades />} />
-          </Routes>
-        </div>
-      </div>
-    </div>
-  );
 }
-
 export default Courses;

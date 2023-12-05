@@ -1,23 +1,19 @@
-.margin-r{
-    margin-right: 15px;
+.table-striped>tbody>tr:nth-of-type(odd)>td.wd-color-link-red {
+    color: #b52828;
 }
 
-.margin-l{
-    margin-left: -20px;
+.grade-table-title {
+    text-align: center;
+    font-weight: normal;
 }
 
-.margin-t{
-    margin-top: 15px;
+.grade-table-subtitle {
+    text-align: center;
+    font-weight: normal;
+    font-size: 0.9rem;     
 }
 
-.margin-b{
-    margin-bottom: 15px;
+.grade-text-box {
+    border-color: #d41b2c;
+    border-radius: 2px;
 }
-
-.table td{
- text-align: center;
-}
-
-/* .list-group-item i{
-    margin-left: 30px;
-} */

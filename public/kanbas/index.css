@@ -1,305 +1,357 @@
-/* sidebar black*/
-
-.wd-nav-sidebar {
-  flex: none;
-  width: 85px;
-  height: 100%;
-  position: fixed;
-}
-
-.wd-nav-sidebar-list .list-group-item {
-  padding: 10px;
-  width: 85px;
-  text-decoration: none;
-  background-color: black;
-  border: none;
-  text-align: center;
-}
-
-.wd-nav-sidebar-list .list-group-item a {
-  color: white;
-  font-size: 12px;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.wd-nav-sidebar-list .list-group-item i {
-  color: red;
-  font-size: 27px;
-}
-
-.list-group.wd-nav-sidebar-list {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
-  margin-bottom: 0;
-  border-radius: 0;
-}
-
-.wd-nav-sidebar-list .list-group-item.account-icon i {
-  color: grey;
-}
-
-ul.wd-nav-sidebar-list .list-group-item .active {
-  background-color: white;
-  border-right: 1px solid black;
-
-}
-
-ul.wd-nav-sidebar-list .list-group-item.active a {
-  color: red;
-}
-
-ul.wd-nav-sidebar-list .list-group-item.active i {
-  color: red;
-}
-
-/*********/
-
-
-.sidebar-margin{
-  padding-left: 150px;
-  padding-top: 30px;
-}
-
-/**icon and heading**/
-
-
-.icon-heading{
-  display: flex; 
-  align-items: center;
-}
-
-.icon-heading i{
-  padding-right: 20px;
-  margin-right: 20px;
-  color:red;
-}
-
-/** account nav **/
-.wd-acc-nav{
-  margin-left: -33px;
-  margin-top: 5px;
-}
-
-
-.wd-acc-nav-list .list-group-item {
-  width: 200px;
-  text-decoration: none;
-  border: none;
-  padding: 10px 0 10px 0;
-}
-
-.wd-acc-nav-list .list-group-item a {
-  color: red;
-  font-size: 14px;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 25px;
-  padding: 10px;
-}
-
-.list-group.wd-acc-nav-list {
-  display: flex;
-  flex-direction: column;
-  border-radius: 0;
-}
-
-.wd-acc-nav-list .list-group-item.active {
-  background-color: white;
-}
-
-.wd-acc-nav-list .list-group-item.active a {
-  color: black;
-  border-left: 1px solid black;
-}
-
-/*** breadcrub **/
-
-.breadcrumb {
+body {
     margin: 0;
-    font-size: 18px;
+    padding: 0;
 }
 
-.breadcrumb-item.main {
-    color: red;
+body * {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* sidebar */
-
-div.col.wd-nav-sidebar {
-  flex: none;
-  width: 85px;
-  height: 100vh;
-  
-  
-  
+.wd-flex-row-container {
+    display: flex;
+    flex-direction: row;
 }
 
-div.row>*.wd-nav-sidebar {
-  padding-right: 0;
-  padding-left: 0;
+.wd-flex-grow-1 {
+    flex-grow: 1;
 }
 
-ul.wd-nav-sidebar-list .list-group-item {
-  
-  padding: 10px;
-  width: 85px;
-  text-decoration: none;
-  background-color: black;
-  border: none;
-  text-align: center;
-
+.wd-bg-color-black {
+    background-color: black;
 }
 
-ul.wd-nav-sidebar-list .list-group-item a {
-  color: white;
-  font-size: 12px;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+.canvas-sidebar {
+    background-color: black;
+    width: 80px; /* Adjust the width within the specified range */
+    text-align: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
 }
 
-ul.wd-nav-sidebar-list .list-group-item i {
-  color: red;
-  font-size: 27px;
+.navbar-nav {
+    padding: 10px 0; /* Adjust the spacing as needed */
+    list-style-type: none;
+    margin: 0;
 }
 
-ul.list-group.wd-nav-sidebar-list {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
-  margin-bottom: 0;
-  border-radius: 0;
+.nav-item {
+    padding: 7px 0; /* Adjust the spacing as needed */
 }
 
-ul.wd-nav-sidebar-list .list-group-item.account-icon i {
-  color: grey;
+.nav-link {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 7px 0; /* Adjust the spacing as needed */
+    text-align: center;
 }
 
-ul.wd-nav-sidebar-list .list-group-item.active {
-  background-color: white;
-  border-right: 1px solid black;
-
+.nav-link span {
+    color: white;
+    font-size: 14px; /* Adjust the font size as needed */
+    display: block;
 }
 
-ul.wd-nav-sidebar-list .list-group-item.active a {
-  color: red;
+.nav-link i {
+    color: #D41B2C;
+    font-size: 18px; /* Adjust the font size as needed */
+    margin-bottom: 5px; /* Adjust the spacing as needed */
 }
 
-ul.wd-nav-sidebar-list .list-group-item.active i {
-  color: red;
+.nav-link.active {
+    background-color: white;
+    color: #b52828;
 }
 
-
-.wd-header-expand{
-  display: flex;
-  padding-left: 3%;
-  margin-right: 10px;
+.nav-link.active span {
+    background-color: white;
+    color: #b52828;
 }
 
-.wd-header-icon{
-  color: red;
-  margin-right: 25px;
+/* .nav-link.active i {
+    color: white;
+} */
+
+.account-sidebar {
+    width: 190px; /* Adjust the width within the specified range */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 100px; /* Adjust this value to account for the Canvas Navigation Sidebar */
+    text-align: left; /* Left justify the link text */
 }
 
-.wd-kanbas-breadcrumbs{
-  color: red;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+.account-nav {
+    list-style-type: none;
+    padding: 20px 0; /* Adjust the spacing as needed */
+    margin: 0;
 }
 
-
-i.wd-profile-picture {
-  
-  font-size: 170px;
-  padding: 20px;
+.account-nav-item {
+    padding: 15px 0; /* Adjust the spacing as needed */
+    position: relative;
 }
 
-div.col.wd-profile a {
-  color: red;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+.account-nav-link {
+    color: #b52828;
+    text-decoration: none;
+    display: block;
+    white-space: normal;
+    padding-left: 10px; /* Adjust the spacing as needed */
+    transition: all 0.3s ease;
 }
 
-div.col.wd-profile i {
-  padding: 5px;    
+.account-nav-link.active {
+    color: black;
+    border-left: 2px solid black;
+    padding-left: 8px; /* Adjust the spacing as needed */
 }
 
-div.kanbas-section {
-  padding-top: 6px;    
-  padding-bottom: 10px;    
+/* Ensure long link text wraps */
+.account-nav-link.active,
+.account-nav-link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
 }
 
-
-
-div.col.wd-acc-nav {
-  flex: none;
-  width: 200px;
-  
+.profile-section {
+    margin: 10px 0px 10px 0px;
 }
 
-div.row>*.wd-acc-nav {
-  padding-right: 0;
-  padding-left: 0;
+.profile-name{
+    padding-bottom: 20px;
 }
 
-ul.wd-acc-nav-list .list-group-item {
-  width: 200px;
-  text-decoration: none;
-  border: none;
-  padding: 10px;
+.profile-link {
+    text-decoration: none;
+    color: #b52828;
 }
 
-ul.wd-acc-nav-list .list-group-item a {
-  color: red;
-  font-size: 14px;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-left: 25px;
-  padding: 10px;
+.btn-primary.wd-btn-edit-profile {
+    background-color: #f5f5f5;
+    border-color: #c7cdd1;
+    color: black;
+    float: right;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-right: 5px;
 }
 
-ul.list-group.wd-acc-nav-list {
-  display: flex;
-  flex-direction: column;
-  border-radius: 0;
+.btn-primary.wd-btn-edit-profile:hover {
+    background-color: #e8e8e8;
+    border-color: #c7cdd1;
+    color: black;
+    float: right;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-right: 5px;
 }
 
-ul.wd-acc-nav-list .list-group-item.active {
-  background-color: white;
+.dashboard-title {
+    font-weight: lighter;
 }
 
-ul.wd-acc-nav-list .list-group-item.active a {
-  color: black;
-  border-left: 1px solid black;
+.dashboard-div {
+    width: 100%;
+    margin: 10px 10px 0 100px;
+    padding-right: 150px;
+    /* position: fixed;
+    top: 10px;
+    bottom: 0;
+    left: 100px; */ /* Adjust this value to account for the Canvas Navigation Sidebar */
+    /*right: 10px; */
+    text-align: left; 
 }
 
-
-.wd-profile-edit-section{
-  padding-top: 6px;    
-  padding-bottom: 10px; 
+.published-course-title {
+    font-weight: normal;
 }
 
-
-.wd-arrow-div {
-  margin-top: 30px; 
+.dashboard-courses {
+    margin-left: 10px;
 }
 
-.icon-heading{
-  display: flex; 
-  align-items: center;
+.dashboard-card {
+    width: 260px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.3);
+    margin: 0 30px 30px 0;
 }
 
-.icon-heading i{
-  padding-right: 20px;
-  margin-right: 20px;
-  color:red;
-}
-.sidebar-margin{
-  padding-left: 150px;
-  padding-top: 30px;
+.card-title {
+    color: #315e8e;
+    font-size: 0.875rem;
 }
 
+.card-subtitle {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 4px;
+    color: #677179;
+}
 
+.card-text {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #677179;
+}
 
+.dashboard-course-card {
+    margin: 0 30px 30px 0;
+    width: 260px; /* Automatically adjust width */
+    height: auto; /* Automatically adjust height */
+    display: inline-block; 
+}
 
+.home-div {
+    width: 100%;
+    margin: 10px 10px 0 130px;
+    padding-right: 20px;
+    text-align: left; 
+}
+
+.home-button-panel {
+    display: flex; 
+    align-items: stretch; 
+    justify-content: flex-end;
+}
+
+.navbar.kanbas-top-bar {
+    margin-top: 30px;
+    padding: 0;
+    color: #b52828;
+    display: flex; 
+    align-items: start; 
+    justify-content: flex-start;
+    width: auto;
+    line-height: 1.2;
+}
+
+.breadcrumb-home-text {
+    font-weight: normal;
+    font-size: 1.125rem;
+}
+
+.btn-primary.course-publish-dropdown {
+    background-color: #f5f5f5;
+    border-color: #c7cdd1;
+    color: black;
+    float: right;
+    border-radius: 3px;   
+    margin-right: 5px;
+}
+
+.btn-primary.course-publish-dropdown:hover {
+    background-color: #e8e8e8;
+    border-color: #c7cdd1;
+    color: black;
+    float: right;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.modules-list {
+    margin: 20px 5px;
+}
+
+.course-status {
+    display: block;
+    white-space: nowrap;
+}
+
+.course-status-buttons {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.navbar.wd-kanbas-top-bar {
+    margin-left: 20px;
+    margin-top: 30px;
+    padding: 0;
+    color: #b52828;
+    display: flex; 
+    align-items: start; 
+    justify-content: space-between;
+    width: auto;
+    line-height: 1.2;
+}
+
+.btn-primary.wd-btn-kanbas-primary {
+    background-color: #f5f5f5;
+    border-color: #c7cdd1;
+    color: black;
+    float: right;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+.btn-primary.wd-btn-kanbas-primary:hover {
+    background-color: #e8e8e8;
+    border-color: #c7cdd1;
+    color: black;
+    float: right;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+.btn-danger.wd-btn-kanbas-danger {
+    background-color: #d41b2c;
+    border-color: #c7cdd1;
+    color: white;
+    float: right;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+.btn-danger.wd-btn-kanbas-danger:hover {
+    background-color: #b52828;
+    border-color: #c7cdd1;
+    color: white;
+    float: right;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+.btn-success.wd-btn-kanbas-success {
+    background-color: green;
+    border-color: #c7cdd1;
+    color: white;
+    float: right;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+.btn-success.wd-btn-kanbas-success:hover {
+    background-color: #b52828;
+    border-color: #c7cdd1;
+    color: white;
+    float: right;
+    border-radius: 3px;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+.list-group.wd-home-list {
+    border-radius: 0px;;
+}
+
+.list-group-item.wd-home-list-item {
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.list-group-item.wd-home-list-item.wd-course-status-button {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}

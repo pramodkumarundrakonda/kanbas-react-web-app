@@ -1,172 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Edit Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
-    <link href="../index.css" rel="stylesheet" />
-    <link href="../styles.css" rel="stylesheet" />
-    <link href="index.css" rel="stylesheet" />
+<meta charset="UTF-8">
+<link href="../index.css" rel="stylesheet"/>
+<link href="/kanbas/kanbas-navigation/index.css" rel="stylesheet"/>
+<link href="/kanbas/course-navigation/index.css" rel="stylesheet"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.css" rel="stylesheet"/>
+<title>Profile</title>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col bg-black wd-nav-sidebar d-none d-sm-block">
-                <!-- <div class="text-center">
-                    <a href="#"><img src="../images/NU_RGB.png" alt="NEU Logo" class="img-fluid"></a>
-                </div> -->
-                <ul class="wd-nav-sidebar-list  list-group">
-                    <li class="list-group-item neu-icon">
-                      <a href="#" >
-                         <img src="../../images/NU_RGB.png " alt="NEU Logo" class="img-fluid" >
-                      </a>
-                    </li>
-                    <li class="list-group-item account-icon active">
-                        <a href="./index.html" >
-                            <i class="far fa-user-circle fa-2x" style="color: grey"></i><br>Account
-                        </a>
-                    </li>
-                    <li class=" list-group-item ">
-                        <a href="../dashboard/index.html" >
-                            <i class="fas fa-tachometer-alt fa-fw fa-2x" ></i></br>Dashboard
-                        </a>
-                    </li>
-                    <li class="list-group-item ">
-                        <a href="../home.html" >
-                            <i class="fa-solid fa-book fa-2x" ></i></br>Courses
-                        </a>
-                    </li>
-                    <li class=" list-group-item ">
-                        <a href="#" >
-                            <i class="fa-regular fa-calendar-days fa-2x" ></i></br>Calendar
-                        </a>
-                    </li>
-                    <li class=" list-group-item ">
-                        <a href="#" >
-                            <i class="fa-solid fa-inbox fa-2x" ></i></br>Inbox
-                        </a>
-                    </li>
-                    <li class="list-group-item ">
-                        <a href="#" >
-                            <i class="fa-regular fa-clock fa-2x" ></i></br>History
-                        </a>
-                    </li>
-                    <li class=" list-group-item ">
-                        <a href="#" >
-                            <i class="fa-solid fa-microchip fa-2x" ></i></br>Studio
-                        </a>
-                    </li>
-                    <li class=" list-group-item ">
-                        <a href="#" >
-                            <i class="fa-solid fa-arrow-right-from-bracket fa-2x" ></i></br>Commons
-                        </a>
-                    </li>
-                    <li class=" list-group-item ">
-                        <a href="#">
-                            <i class="fa-solid fa-question fa-2x" ></i> </br>Help
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col sidebar-margin">
-              <div class="icon-heading">
-                <i class="fa-solid fa-bars fa-2x"></i>
-                <h4 class="text-muted">Jose Annunziato's Profile</h4>
-                
-              </div>
-              <hr>
-              <div class="row">
-
-                <div class="col wd-acc-nav d-none d-sm-block col-3">
-                    <ul class="wd-acc-nav-list list-group">
-                        <li class="list-group-item"><a href="#">Notifications</a></li>
-                        <li class="list-group-item active"><a href="index.html">Profile</a></li>
-                        <li class="list-group-item"><a href="#">Files</a></li>
-                        <li class="list-group-item"><a href="#">Settings</a></li>
-                        <li class="list-group-item"><a href="#">eProtfolios</a></li>
-                        <li class="list-group-item"><a href="#">Shared Content</a></li>
-                        <li class="list-group-item"><a href="#">The Hub</a></li>
-                        <li class="list-group-item"><a href="#">Qwickly Course Tools</a></li>
-                        <li class="list-group-item"><a href="#">Announcemnets</a></li>
+    <!-- <table cellspacing="20">
+        <tbody>
+            <tr>
+                <td valign="top">
+                    <ul>
+                        <li><a href="/kanbas/profile-navigation/index.html">Account</a></li>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="/kanbas/course-navigation/index.html">Courses</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Inbox</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Studio</a></li>
+                        <li><a href="#">Commons</a></li>
+                        <li><a href="#">Help</a></li>
                     </ul>
-                </div>
-                <div class="col">
-                  <i class="fa-solid fa-circle-user wd-profile-picture" style="color: #656972;"></i>
-                  <div class="form-group wd-profile-edit-section">
-                    <label for="text-name">Name:*</label>
-                    <input type="text" id="text-name" class="form-control" name="text-name" value="Jose Annunziatio" />
-                </div>
-            
-                <div class="form-group wd-profile-edit-section">
-                    <label for="pronouns">Pronouns:</label>
-                    <select id="pronouns" class="form-select" name="pronouns">
-                        <option value="VAL1" selected>None</option>
-                        <option value="VAL2">He</option>
-                        <option value="VAL2">She</option>
-                    </select>
-                </div>
-            
-                <div class="form-group wd-profile-edit-section" >
-                    <label for="text-title">Title:</label>
-                    <input type="text" id="text-title" name="text-title" class="form-control" />
-                </div>
-            
-                <div class="wd-profile-edit-section">
+                </td>
+                <td valign="top">
+                    <ul>
+                        <li><a href="#">Notifications</a></li>
+                        <li><a href="/kanbas/profile/index.html">Profile</a></li>
+                        <li><a href="#">Files</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">ePortfolios</a></li>
+                        <li><a href="#">Shared Content</a></li>
+                        <li><a href="#">The Hub</a></li>
+                        <li><a href="#">Qwickly Course Tools</a></li>
+                        <li><a href="#">Global Announcements</a></li>
+                    </ul>
+                </td>
+                <td valign="top">
+                    <h2>Sahithi Chigurupati</h2>
+                    <label for="profile-name">Name:*</label>
+                    <input type="text" value="Sahithi Chigurupati"/>
+                    <label for="profile-pronouns">Pronouns:</label>
+                    <select>
+                        <option>None</option>
+                    </select><br/><br/>
+                    <label for="profile-title">Title:</label>
+                    <input type="text"/>
                     <h3>Contact</h3>
-                    No registered services, you can add some on the <a href="#" class="text-danger">settings</a> page.
-                </div>
-                <div class="wd-profile-edit-section">
+                    No registered services, you can add some on the <a href="#">settings</a> page.
                     <h3>Biography</h3>
-                    <textarea class="form-control"  rows="3">Faculty, Software Engineer, AI, Space, and renewables enthusiast.</textarea>  
-                </div>
-                    <div class="wd-profile-edit-section">
+                    Student, Software Engineer, Full Stack, Cloud Computing and DevOps.<br/>
+                    <textarea style="width: 100%;">Student, Software Engineer, Full Stack, Cloud Computing and DevOps</textarea>
                     <h3>Links</h3>
-                    <div class="row">
-                        <div class="col">
-                            <h6 class="text-center">Title</h6>
-                            <input class="form-control" type="text" value="YouTube" name="text-youtube" id="text-youtube"/>
-                        </div>
-                        <div class="col-1 text-center wd-arrow-div">&#8594;</div>
-                        <div class="col">
-                            <h6 class="text-center">URL</h6>
-                            <input class="form-control" type="text" value="https://www.youtube.come/123" name="text-youtube-url" id="text-youtube-url"/>
-                        </div>
-                    </div>
-                
-                    <button class="btn btn-secondary mt-3">Add another link</button><br />     
-                    </div>
-                    <hr>
-                
-                
-                <div class="wd-profile-edit-section float-end">
-                    <a href="index.html">
-                        <button class="btn btn-secondary">Cancel</button>
-                    </a>
-                    <a href="index.html">
-                        <button class="btn btn-danger">Save Profile</button>
-                    </a>
-                </div>
-              </div>
-              <div class="col d-md-flex">
-                <a href="edit.html">
-                    <button class="btn btn-secondary"><i class="fa-solid fa-pencil"></i> Cancel Editing</button>
+                    <ul>
+                        <li><a href="#">Youtube</a></li>
+                    </ul><br/>
+                    <b>&emsp;&emsp;&emsp;Title&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        &emsp;&emsp;&emsp;&emsp;URL</b><br/>
+                    <input type="text" value="YouTube"/>&rightarrow;
+                    <input type="text" value="https://www.youtube.com/">
+                    <a href="#">Remove</a><br/><br/>
+                    <button type="button">Add another link</button><br/><br/>
+                    <a href="/kanbas/profile/index.html"><button type="button">Cancel</button></a>
+                    <a href="/kanbas/profile/index.html"><button type="button">Save Profile</button></a><br/>
+                    <button type="button">Edit Profile</button>
+                    <a href="/kanbas/profile/index.html"><button type="button">Cancel Editing</button></a>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
+    <!-- <nav class="canvas-sidebar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="/kanbas/profile-navigation/index.html">
+                    <i class="fas fa-user" style="color: gray;"></i>
+                    <span>Account</span>
                 </a>
-            </div>
-               
-              </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/kanbas/dashboard/index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/kanbas/course-navigation/index.html">
+                    <i class="fas fa-book"></i>
+                    <span>Courses</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="far fa-calendar"></i>
+                    <span>Calendar</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-inbox"></i>
+                    <span>Inbox</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-history"></i>
+                    <span>History</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-film"></i>
+                    <span>Studio</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>Commons</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Help</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-          
-              
-              <div class="row">
-                  
-                  
+    <nav class="account-sidebar">
+        <ul class="account-nav">
+            <li class="account-nav-item">
+                <a class="account-nav-link" href="#">
+                    Notifications
+                </a>
+            </li>
+            <li class="account-nav-item">
+                <a class="account-nav-link active" href="/kanbas/profile/index.html">
+                    Profile
+                </a>
+            </li>
+            <li class="account-nav-item">
+                <a class="account-nav-link" href="#">
+                    Files
+                </a>
+            </li>
+            <li class="account-nav-item">
+                <a class="account-nav-link" href="#">
+                    Settings
+                </a>
+            </li>
+            <li class="account-nav-item">
+                <a class="account-nav-link" href="#">
+                    ePortfolios
+                </a>
+            </li>
+            <li class="account-nav-item">
+                <a class="account-nav-link" href="#">
+                    Shared Content
+                </a>
+            </li>
+            <li class="account-nav-item">
+                <a class="account-nav-link" href="#">
+                    The Hub
+                </a>
+            </li>
+            <li class="account-nav-item">
+                <a class="account-nav-link" href="#">
+                    Qwickly Course Tools
+                </a>
+            </li>
+            <li class="account-nav-item">
+                <a class="account-nav-link" href="#">
+                    Global Announcements
+                </a>
+            </li>
+        </ul>
+    </nav> -->
+
+    <div class="wd-flex-row-container">
+        <div class="wd-bg-color-black"> 
+            <ul class="wd-kanbas-navigation">
+                <li style="padding: 0px; margin: 0px;"><img src="/images/northeastern.png" width="84px" height="85px"></li>
+                <li class="wd-active"><a href="/kanbas/profile/index.html"><i class="fas fa-user wd-kanbas-navigation-account" aria-hidden="true"></i><br/>Account</a></li>
+                <li><a href="/kanbas/dashboard/index.html"><i class="fa fa-tachometer" aria-hidden="true"></i><br/>Dashboard</a></li>
+                <li><a href="/kanbas/course-navigation/index.html"><i class="fas fa-book" aria-hidden="true"></i><br/>Courses</a></li>
+                <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><br/>Calendar</a></li>
+                <li><a href="#"><i class="fas fa-inbox" aria-hidden="true"></i><br/>Inbox</a></li>
+                <li><a href="#"><i class="fas fa-history" aria-hidden="true"></i><br/>History</a></li>
+                <li><a href="#"><i class="fas fa-film" aria-hidden="true"></i><br/>Studio</a></li>
+                <li><a href="#"><i class="fas fa-bullhorn" aria-hidden="true"></i><br/>Commons</a></li>
+                <li><a href="#"><i class="fas fa-question-circle" aria-hidden="true"></i><br/>Help</a></li>
+            </ul>
+        </div>
+        <div class="wd-flex-grow-1" style="margin-right: 20px;">
+        <div class="navbar wd-kanbas-top-bar">
+            <div style="display: flex;">
+            <i class="fas fa-bars fa-2x" style="padding-left: 2px;"></i>
+            <!-- <nav style="--bs-breadcrumb-divider: '>'; padding-left: 30px;" aria-label="breadcrumb">
+                <ol class="breadcrumb" style="white-space: nowrap; margin: 0;">
+                  <li class="breadcrumb-item"><p class="breadcrumb-home-text">CS5610.11550.202410</p></li>
+                  <li class="breadcrumb-item active" aria-current="page"><p class="breadcrumb-home-text" style="color: black;">Assignments</p></li>
+                </ol>
+              </nav> -->
+              <div style="padding-left: 30px; color: black; font-size: large;">
+                Sahithi Chigurupati's Profile
               </div>
-          </div>
+            </div>
+        </div>
+        <hr style="margin-left: 20px;"/>
+
+        <div class="wd-flex-row-container wd-flex-grow-1">
+        <div>
+            <ul class="wd-course-navigation">
+                <li><a href="#">Notifications</a></li>
+                <li class="wd-active"><a href="/kanbas/profile/index.html">Profile</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">ePortfolios</a></li>
+                <li><a href="#">Shared Content</a></li>
+                <li><a href="#">The Hub</a></li>
+                <li><a href="#">Qwickly Course Tools</a></li>
+                <li><a href="#">Global Announcements</a></li>
+            </ul>
+        </div>
+        <div class="wd-flex-grow-1">
+            <!-- <br/> -->
+            <!-- <div class="wd-flex-row-container" style="justify-content: space-between;">
+                <input type="text" class="form-control w-25" placeholder="Search for Assignments">
+                <div class="wd-flex-row-container float-end">
+                    <button class="btn btn-primary wd-btn-kanbas-primary"><i class="fa fa-plus"></i> Group</button>
+                    <button class="btn btn-danger wd-btn-kanbas-danger"><i class="fa fa-plus"></i> Assignment</button>
+                    <button class="btn btn-primary wd-btn-kanbas-primary"><i class="fas fa-ellipsis-v"></i></button>
+                </div>
+            </div>
+            
+            <hr/> -->
+
+            <div class="modules-list">
+                <!-- <div class="container mt-5"> -->
+                    <div class="row ms-4">
+                            <!-- Large account icon -->
+                            <div class="row mb-3">
+                            <div class="profile-icon col-sm-6">
+                                <i class="fas fa-user fa-5x"></i>
+                            </div>
+                            <div class="col-sm-6 text-right">
+                                <!-- Edit Profile button -->
+                                <a href="/kanbas/profile/index.html">
+                                <button class="btn btn-primary wd-btn-edit-profile">
+                                    <i class="fas fa-pencil-alt"></i> Cancel Editing
+                                </button>
+                                </a>
+                                <!-- Cancel Editing button -->
+                                <!-- <button class="btn btn-secondary ml-2">
+                                    <i class="fas fa-pencil-alt"></i> Cancel Editing
+                                </button> -->
+                                <!-- Save Profile button -->
+                                <!-- <button class="btn btn-danger ml-2">
+                                    <i class="fas fa-save"></i> Save Profile
+                                </button> -->
+                            </div>
+                        </div>
+                            <!-- Full name -->
+                            <div class="col-sm-7">
+                            <label for="profile-edit-name">Name:*</label>
+                            <input type="text" class="form-control mb-2" id="profile-edit-name" value="Sahithi Chigurupati"/>
+                            <label for="profile-edit-pronouns">Pronouns:</label>
+                            <select class="form-select mb-2" id="profile-edit-pronouns">
+                                <option>None</option>
+                            </select>
+                            <label for="profile-edit-title">Title:</label>
+                            <input type="text" class="form-control mb-2" id="profile-edit-title"/>
+                            <div class="profile-section mt-4">
+                                <!-- Contact section -->
+                                <h4>Contact</h4>
+                                <p>No registered services, you can add some on the <a class="profile-link" href="#">settings</a> page.</p>
+                            </div>
+                            <div class="profile-section mt-4">
+                                <!-- Biography section -->
+                                <h4>Biography</h4>
+                                <textarea class="form-control" rows="3">Student, Software Engineer, Full Stack, Cloud Computing and DevOps</textarea>
+                            </div>
+                            <div class="profile-section mt-4">
+                                <!-- Links section -->
+                                <h4>Links</h4>
+                                <div class="row">
+                                    <div class="col-sm-4 text-center wd-font-weight-bold ">
+                                        <p>Title</p>
+                                    </div>
+                                    <div class="col-sm-4 text-center wd-font-weight-bold ">
+                                        <p>URL</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <input class="form-control" value="YouTube"/>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <i class="fa-solid fa-arrow-right mt-2"></i>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input class="form-control" value="https://www.youtube.com/@WebDevTV"/>
+                                    </div>
+                                    <div class="col">
+                                        <i class="fa-solid fa-xmark wd-color-text-red mt-2"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ms-1" style="width: fit-content;">
+                                <button class="btn btn-primary wd-btn-kanbas-primary" style="float: left;">
+                                    Add another link
+                                </button>
+                            </div>
+                            <div class="row">
+                                <div class="profile-section">
+                                    <hr/>
+                                     <a href="/kanbas/profile/index.html" style="text-decoration: none;">
+                                        <button class="btn btn-danger wd-btn-kanbas-danger">
+                                        Save Profile
+                                    </button></a>
+                                    <a href="/kanbas/profile/index.html" style="text-decoration: none;">
+                                        <button class="btn btn-primary wd-btn-kanbas-primary">
+                                        Cancel
+                                    </button></a>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                            
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        </div>
         </div>
     </div>
-
 </body>
-
 </html>
